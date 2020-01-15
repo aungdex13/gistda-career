@@ -17,27 +17,27 @@
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">ปีที่สมัคร *</label>
-									<input type="text" name="year_of_applied" oninput="this.className = ''" >
+									<input type="text" name="year_of_applied" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-6">
 									<label for="">วันที่สมัคร *</label>
-									<input type="text" name="date_of_applied" oninput="this.className = ''">
+									<input type="text" id="date_of_applied" name="date_of_applied" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">เลขที่ใบสมัคร : </label>
-									<input type="text" name="number_of_applied" oninput="this.className = ''">
+									<input type="text" name="number_of_applied" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-6">
 									<label for="">ตำแหน่งที่เปิดรับสมัคร *</label>
-									<input type="text" name="" id="position_of_applied" oninput="this.className = ''">
+									<input type="text" name="" id="position_of_applied" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">ประกาศรับสมัคร : </label>
-									<input type="text" name="applied_announcement" oninput="this.className = ''">
+									<input type="text" name="applied_announcement" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -47,35 +47,35 @@
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">คำนำหน้าชื่อ *</label>
-									<input type="text" name="title_name" oninput="this.className = ''">
+									<input type="text" name="title_name" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">ชื่อ(TH) *</label>
-									<input type="text" name="first_name_th" oninput="this.className = ''">
+									<input type="text" name="first_name_th" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">นามสกุล(TH) *</label>
-									<input type="text" name="last_name_th" oninput="this.className = ''">
+									<input type="text" name="last_name_th" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">ชื่อ(EN) : </label>
-									<input type="text" name="first_name_en" oninput="this.className = ''">
+									<input type="text" name="first_name_en" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">นามสกุล(EN) : </label>
-									<input type="text" name="last_name_en" oninput="this.className = ''">
+									<input type="text" name="last_name_en" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">เพศ *</label>
-									<input type="text" name="gendar" oninput="this.className = ''">
+									<input type="text" name="gendar" oninput="this.className = ''" class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">วันเดือนปีเกิด *</label>
-									<input type="text" name="date_birth" oninput="this.className = ''">
+									<input type="text" name="date_birth" oninput="this.className = ''" class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
@@ -104,27 +104,27 @@
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">สัญชาติ : </label>
-									<input type="text" name="nationality" oninput="this.className = ''">
+									<input type="text" name="nationality" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">ศาสนา : </label>
-									<input type="text" name="religion" oninput="this.className = ''">
+									<input type="text" name="religion" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">การรับราชการทหาร : </label>
-									<input type="text" name="military_service" oninput="this.className = ''">
+									<input type="text" name="military_service" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">หมู่โลหิต : </label>
-									<input type="text" name="blood_type" oninput="this.className = ''">
+									<input type="text" name="blood_type" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">โรคประจำตัว : </label>
-									<input type="text" name="congenital_disease" oninput="this.className = ''">
+									<input type="text" name="congenital_disease" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">ระบุโรคประจำตัว : </label>
-									<input type="text" name="congenital_disease_text" oninput="this.className = ''">
+									<input type="text" name="congenital_disease_text" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -134,99 +134,104 @@
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">เลขบัตรประชาชน : </label>
-									<input type="text" id="intTextBox" name="id_card_number" oninput="this.className = ''">
+									<input type="text" id="intTextBox" name="id_card_number" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">วันที่บัตรหมดอายุ : </label>
-									<input type="text" id="datepicker" name="id_card_expiration_date" oninput="this.className = ''">
+									<input type="text" id="id_card_expiration_date" name="id_card_expiration_date"  class="form-control" oninput="this.className = ''">
 								</div>
 								<div class="col-md-4">
 									<label for="">วันที่ออกบัตร : </label>
-									<input type="text" name="id_card_issue_date" oninput="this.className = ''">
+									<input type="text" id="id_card_issue_date" name="id_card_issue_date"  class="form-control" oninput="this.className = ''">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">จังหวัดที่ออกบัตร : </label>
-									<input type="text" name="province_id_card_issue" oninput="this.className = ''">
+									<select name="province_id_card_issue" class="form-control">
+										<option value="">เลือกจังหวัด</option>
+										@foreach ($list as $row)
+										<option value="{{$row->province_id}}">{{$row->province_name}}</option>
+										@endforeach
+									</select>
 								</div>
 								<div class="col-md-4">
 									<label for="">สถานที่ออกบัตร : </label>
-									<input type="text" name="location_id_card_issue" oninput="this.className = ''">
+									<input type="text" name="location_id_card_issue" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">Passport NO : </label>
-									<input type="text" name="passport_no" oninput="this.className = ''">
+									<input type="text" name="passport_no" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">Expired Date : </label>
-									<input type="text" name="passport_expired_date" oninput="this.className = ''">
+									<input type="text" id="passport_expired_date" name="passport_expired_date" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">Issue Date : </label>
-									<input type="text" name="passport_issued_date" oninput="this.className = ''">
+									<input type="text" id="passport_issued_date" name="passport_issued_date" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">Visa NO : </label>
-									<input type="text" name="visa_no" oninput="this.className = ''">
+									<input type="text" name="visa_no" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">Type of Visa : </label>
-									<input type="text" name="type_of_visa" oninput="this.className = ''">
+									<input type="text" name="type_of_visa" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">Issue Date : </label>
-									<input type="text" name="visa_issue_date" oninput="this.className = ''">
+									<input type="text" id="visa_issue_date" name="visa_issue_date" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">Expired Date : </label>
-									<input type="text" name="visa_expired_date" oninput="this.className = ''">
+									<input type="text" id="visa_expired_date" name="visa_expired_date" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">Work Permit NO :</label>
-									<input type="text" name="work_permit_no" oninput="this.className = ''">
+									<input type="text" name="work_permit_no" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">Expired Date : </label>
-									<input type="text" name="work_permit_expired_date" oninput="this.className = ''">
+									<input type="text" id="work_permit_expired_date" name="work_permit_expired_date" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">Issue Date : </label>
-									<input type="text" name="work_permit_issue_date" oninput="this.className = ''">
+									<input type="text" id="work_permit_issue_date" name="work_permit_issue_date" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">สถานภาพสมรส:</label>
-									<input type="text" name="marital_status" oninput="this.className = ''">
+									<input type="text" name="marital_status" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">ชื่อคู่สมรส : </label>
-									<input type="text" name="spouse_first_name" oninput="this.className = ''">
+									<input type="text" name="spouse_first_name" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">นามสกุลคู่สมรส : </label>
-									<input type="text" name="spouse_last_name" oninput="this.className = ''">
+									<input type="text" name="spouse_last_name" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">อาชีพคู่สมรส : </label>
-									<input type="text" name="spouse_career" oninput="this.className = ''">
+									<input type="text" name="spouse_career" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-3">
 									<label for="">สถานที่ทำงานคู่สมรส : </label>
-									<input type="text" name="spouse_career_location" oninput="this.className = ''">
+									<input type="text" name="spouse_career_location" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-3">
 									<label for="">จำนวนบุตร : </label>
-									<input type="text" name="number_of_children" oninput="this.className = ''">
+									<input type="text" name="number_of_children" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -236,35 +241,35 @@
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">การเขียน : </label>
-									<input type="text" name="writing" oninput="this.className = ''">
+									<input type="text" name="writing" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">ระดับความสามารถ : </label>
-									<input type="text" name="ability_level" oninput="this.className = ''">
+									<input type="text" name="ability_level" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">ภาษาท้องถิ่น : </label>
-									<input type="text" name="local_language" oninput="this.className = ''">
+									<input type="text" name="local_language" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">ความรู้เกี่ยวกับคอมพิวเตอร์ : </label>
-									<input type="text" name="computer_knowledge" oninput="this.className = ''">
+									<input type="text" name="computer_knowledge" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-6">
 									<label for="">โปรแกรมที่ใช้งานได้ : </label>
-									<input type="text" name="programs_be_used" oninput="this.className = ''">
+									<input type="text" name="programs_be_used" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">ความสามารถพิเศษอื่นๆ : </label>
-									<input type="text" name="other_special_abilities" oninput="this.className = ''">
+									<input type="text" name="other_special_abilities" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-6">
 									<label for="">งานอดิเรก : </label>
-									<input type="text" name="hobbies" oninput="this.className = ''">
+									<input type="text" name="hobbies" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -274,43 +279,43 @@
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">TOEFL Paper : </label>
-									<input type="text" name="toefl_paper" oninput="this.className = ''">
+									<input type="text" name="toefl_paper" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">คะแนนเทียบ TOEFL : </label>
-									<input type="text" name="toefl_compare_score" oninput="this.className = ''">
+									<input type="text" name="toefl_compare_score" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">TOEFL CBT : </label>
-									<input type="text" name="toefl_cbt" oninput="this.className = ''">
+									<input type="text" name="toefl_cbt" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">คะแนนเทียบ TOEFL : </label>
-									<input type="text" name="toefl_cbt_compare_score" oninput="this.className = ''">
+									<input type="text" name="toefl_cbt_compare_score" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">TOEFL IBT : </label>
-									<input type="text" name="toefl_ibt" oninput="this.className = ''">
+									<input type="text" name="toefl_ibt" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">IELTS : </label>
-									<input type="text" name="ielts" oninput="this.className = ''">
+									<input type="text" name="ielts" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">คะแนนเทียบ TOEFL : </label>
-									<input type="text" name="ielts_compare_score" oninput="this.className = ''">
+									<input type="text" name="ielts_compare_score" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">CU-TEP : </label>
-									<input type="text" name="cu_tep" oninput="this.className = ''">
+									<input type="text" name="cu_tep" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -320,29 +325,29 @@
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">อาชีพ : </label>
-									<input type="text" name="career" oninput="this.className = ''">
+									<input type="text" name="career" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">ตำแหน่ง : </label>
-									<input type="text" name="position" oninput="this.className = ''">
+									<input type="text" name="position" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">สังกัด : </label>
-									<input type="text" name="affiliation" oninput="this.className = ''">
+									<input type="text" name="affiliation" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">เริ่มต้นวันที่ : </label>
-									<input type="text" name="career_start_date" oninput="this.className = ''">
+									<input type="text" name="career_start_date" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">สิ้นสุดวันที่ : </label>
-									<input type="text" name="career_ended_date" oninput="this.className = ''">
+									<input type="text" name="career_ended_date" oninput="this.className = ''"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">เงินเดือน : </label>
-									<input type="text" name="salary" oninput="this.className = ''">
+									<input type="text" name="salary" oninput="this.className = ''"  class="form-control">
 								</div>
 							</div>
 						</div>
@@ -524,8 +529,33 @@ $("#intTextBox").inputFilter(function(value) {
 </script>
 <script>
 $( function() {
-	$( "#datepicker" ).datepicker();
+	$( "#id_card_issue_date" ).datepicker();
 } );
+$( function() {
+	$( "#id_card_expiration_date" ).datepicker();
+} );
+$( function() {
+	$( "#passport_expired_date" ).datepicker();
+} );
+$( function() {
+	$( "#passport_issued_date" ).datepicker();
+} );
+$( function() {
+	$( "#visa_issue_date" ).datepicker();
+} );
+$( function() {
+	$( "#visa_issue_date" ).datepicker();
+} );
+$( function() {
+	$( "#work_permit_expired_date" ).datepicker();
+} );
+$( function() {
+	$( "#work_permit_issue_date" ).datepicker();
+} );
+$( function() {
+	$( "#date_of_applied" ).datepicker();
+} );
+
 </script>
 </body>
 
