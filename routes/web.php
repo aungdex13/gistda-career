@@ -24,3 +24,7 @@ Route::get('/resume', 'apps\ResumeController@resumeindex')->name('resume');
 Route::post('/insertdataresume', 'apps\ResumeController@insertresume')->name('insertdataresume');
 Route::post('/resume/fetch', 'apps\ResumeController@fetch')->name('dropdown.fetch');
 Route::post('/resume/fetchD', 'apps\ResumeController@fetchD')->name('dropdown.fetchD');
+
+// attachment
+Route::get('/attachment', 'apps\AttachmentController@attachmentindex')->name('attachment');
+Route::post('/uploadfile', 'apps\AttachmentController@uploadFilePost')->name('uploadfile');
