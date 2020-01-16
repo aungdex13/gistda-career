@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('apps.index');
 });
-
+Route::get('/test', function () {
+    return view('app.file_upload.1.tfrwcJEJREXWluRj5JJV27Y1tT6ebBDh1SM1T1EK.jpg');
+});
 Route::get('/jobapplied', function () {
     return view('apps.jobapplied');
 });
