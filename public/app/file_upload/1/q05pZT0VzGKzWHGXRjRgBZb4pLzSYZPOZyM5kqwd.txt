@@ -1,0 +1,61 @@
+127.0.0.1	aefi.local
+
+127.0.0.1	jit.local
+
+127.0.0.1	lajit.local
+
+127.0.0.1	upload.local
+
+127.0.0.1	site.test
+
+127.0.0.1	gistda.local
+
+127.0.0.1	career.gistda
+
+127.0.0.1	gistda.career
+
+
+
+
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/jit"
+    ServerName jit.local
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/laravel/JIT/public"
+    ServerName lajit.local
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/boepeopleupload"
+    ServerName upload.local
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/laravel/gistda/public"
+    ServerName gistda.local
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/career-gistda"
+    ServerName career.gistda
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>
+<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    DocumentRoot "A:/xampp/htdocs/laravel/gistda-career/public""
+    ServerName gistda.career
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+</VirtualHost>

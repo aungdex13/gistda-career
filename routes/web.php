@@ -14,9 +14,7 @@
 Route::get('/', function () {
     return view('apps.index');
 });
-Route::get('/test', function () {
-    return view('app.file_upload.1.tfrwcJEJREXWluRj5JJV27Y1tT6ebBDh1SM1T1EK.jpg');
-});
+
 Route::get('/jobapplied', function () {
     return view('apps.jobapplied');
 });
@@ -30,3 +28,10 @@ Route::post('/resume/fetchD', 'apps\ResumeController@fetchD')->name('dropdown.fe
 // attachment
 Route::get('/attachment', 'apps\AttachmentController@attachmentindex')->name('attachment');
 Route::post('/uploadfile', 'apps\AttachmentController@uploadFilePost')->name('uploadfile');
+Route::get('/deletefile', 'apps\AttachmentController@deletefile')->name('deletefile');
+
+// admin session
+// addjobposition
+Route::get('/addjobposition', 'admin\AddjobpositionController@addjobpositionindex')->name('addjobposition');
+Route::post('/insertposition', 'admin\AddjobpositionController@insertposition')->name('insertposition');
+Route::get('/jobposition', 'admin\AddjobpositionController@jobpositionindex')->name('jobposition');

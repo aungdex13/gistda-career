@@ -4,7 +4,7 @@
       <div class="col-md-7 align-self-center text-center text-md-left ">
         <div class="intro-text">
           <h2>GISTDA</h2>
-    <h1>CAREER</h1>
+          <h2>CAREER</h2>
           <p class="mb-4">GISTDA To be Value based Organization<span class="d-block">in Geo-space Intelligence Deliveries by 2020</p>
         </div>
       </div>

@@ -1,0 +1,252 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhostdata
+ Source Server Type    : MySQL
+ Source Server Version : 100125
+ Source Host           : localhost:3306
+ Source Schema         : jit_base
+
+ Target Server Type    : MySQL
+ Target Server Version : 100125
+ File Encoding         : 65001
+
+ Date: 06/12/2019 12:30:11
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for disease_infection
+-- ----------------------------
+DROP TABLE IF EXISTS `disease_infection`;
+CREATE TABLE `disease_infection`  (
+  `id` int(50) NOT NULL AUTO_INCREMENT,
+  `disease_code` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `disease_th_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `disease_en_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `Group_disease` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `Status` int(5) NULL DEFAULT NULL,
+  `date_add` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of disease_infection
+-- ----------------------------
+INSERT INTO `disease_infection` VALUES (1, '91', 'โรคไข้หวัดนก', 'Avian Influenza', 'โรคระบบทางเดินหายใจ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (2, '85', 'โรคโบทูลิซึม', 'Botulism', 'โรคจากอาหารและน้ำ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (3, '83', 'บรูเซลโลสิส', 'Brucellosis', 'โรคติดต่อจากสัตว์สู่คน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (4, '84', 'โรคไข้ปวดข้อยุงลาย', 'Chikungunya', 'โรคติดต่อนำโดยแมลง', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (5, '01', 'โรคท้องร่วงรุนแรงที่เกิดจากการติดเชื้อแบคทีเรีย', 'Cholera', 'โรคจากอาหารและน้ำ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (6, '66', 'เป็นโรคติดต่อที่เกิดจากเชื้อไวรัสเดงกี่', 'Dengue fever', 'โรคติดต่อนำโดยแมลง', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (7, '02', 'อุจจาระร่วง', 'Diarrhea', 'โรคจากอาหารและน้ำ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (8, '23', 'คอตีบ', 'Diphtheria', 'โรคที่ป้องกันได้ด้วยวัคซีน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (9, 'A98.4 ', 'โรคติดต่อที่เกิดจากเชื้อไวรัส อีโบล', 'Ebola', 'โรคติดต่อที่เกิดจากเชื้อไวรัส', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (10, '28', 'ไข้สมองอักเสบ', 'Encephalitis', 'โรคติดต่อระบบประสาท', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (11, '90', 'อาการของการติดเชื้อเอนเทอโรไวรัส', 'Enterovirus Fever', 'โรคอื่นๆ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (12, '03', 'อาหารเป็นพิษ', 'Food poisoning', 'โรคจากอาหารและน้ำ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (13, 'B08.4', 'โรคมือเท้าปาก', 'Hand Foot Mouth', 'โรคติดต่อที่เกิดจากเชื้อไวรัส', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (14, '11', 'โรคไวรัสตับอักเสบเอ', 'Hepatitis A', 'ตับอักเสบ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (15, '15', 'ไข้หวัดใหญ่', 'Influenza', 'โรคระบบทางเดินหายใจ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (16, ' A48.1', 'โรคปอดอักเสบลีเจียนแนร์', 'Legionnair', 'โรคระบบทางเดินหายใจ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (17, 'B55.2 ', 'โรคลิชมาเนีย', 'Leishmania', 'โรคติดต่อจากสัตว์สู่คน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (18, '43', 'โรคฉี่หนู', 'Leptospirosis', 'โรคติดต่อจากสัตว์สู่คน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (19, '30', 'โรคมาลาเรีย', 'Malaria', 'โรคติดต่อนำโดยแมลง', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (20, '21', 'โรคหัด', 'Measles', 'โรคที่ป้องกันได้ด้วยวัคซีน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (21, '72', 'โรคเมลิออยโดสิส', 'Melioidosis', 'โรคอื่นๆ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (22, '19', 'ไข้กาฬหลังแอ่นชนิดเยื่อหุ้มสมองอักเสบ', 'Meningococcal meningitis', 'โรคติดต่อระบบประสาท', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (23, 'J12', 'โรคทางเดินหายใจตะวันออกกลาง', 'MERS', 'โรคระบบทางเดินหายใจ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (24, '52', 'โรคคางทูม', 'Mumps', 'โรคที่ป้องกันได้ด้วยวัคซีน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (25, '58', 'โรคพิษเห็ด', 'Mushroom poisoning', 'โรคจากอาหารและน้ำ', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (26, '24', 'โรคไอกรน', 'Pertussis', 'โรคที่ป้องกันได้ด้วยวัคซีน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (27, '42', 'โรคพิษสุนัขบ้า', 'Rabies', 'โรคติดต่อจากสัตว์สู่คน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (28, '16', 'โรคหัดเยอรมัน', 'Rubella', 'โรคที่ป้องกันได้ด้วยวัคซีน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (29, 'B75', 'ทริคิเนลล่า ', 'Trichinella', 'โรคติดต่อจากสัตว์สู่คน', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (30, '32', 'วัณโรค', 'Tuberculosis', 'วัณโรค', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (31, '87', 'ไวรัสซิกา', 'Zika', 'โรคติดต่อนำโดยแมลง', 1, '2019-11-26');
+INSERT INTO `disease_infection` VALUES (32, 'B03', 'ไข้ทรพิษ', 'Smallpox', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (33, 'A20', 'กาฬโรค', 'Plague', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (34, 'A98.0', 'ไข้เลือดออกไครเมียนคองโก', 'Crimean-congo hemorrhagic fever', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (35, 'A92.3', 'ไข้เวสไนล์', 'west nile fever', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (36, 'A95', 'ไข้เหลือง', 'yellow fever', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (37, 'A96.2', 'ไข้ลาสซา', 'lassa fever', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (38, 'B33.8', 'โรคติดเชื้อไวรัสนิปาห์', 'nipah virus disease', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (39, ' A98.3', 'โรคติดเชื้อไวรัสมาร์บวร์ก', 'marburg virus disease', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (40, 'B33.8.1', 'โรคติดเชื้อไวรัสเฮนดรา', 'handra virus disease', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+INSERT INTO `disease_infection` VALUES (41, 'B97.21', 'โรคซาร์ส', 'sars', 'โรคติดต่อร้ายแรง', 1, '2019-12-06');
+
+-- ----------------------------
+-- Table structure for examination_method
+-- ----------------------------
+DROP TABLE IF EXISTS `examination_method`;
+CREATE TABLE `examination_method`  (
+  `id` int(50) NOT NULL,
+  `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `status` int(5) NULL DEFAULT NULL,
+  `date_add` varchar(90) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of examination_method
+-- ----------------------------
+INSERT INTO `examination_method` VALUES (1, 'PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (2, 'RT-PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (3, 'Real-time PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (4, 'Real-time RT-PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (5, 'Multiplex PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (6, 'Multiplex Real-time PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (7, 'Conventional Nested RT-PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (8, 'Conventional PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (9, 'Nested PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (10, 'Qualitative Real-time PCR & Conventional RT-PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (11, 'Qualitative Real-time PCR', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (12, 'ELISA', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (13, 'HI', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (14, 'Agglutination & ELISA', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (15, 'Mouse bioassay ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (16, 'เพาะเชื้อและทดสอบคุณสมบัติทางชีวเคมี ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (17, 'เพาะแยกเชื้อ ทดสอบคุณสมบัติทางชีวเคมี และทดสอบยาต้านจุลชีพ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (18, 'Cell culture', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (19, 'เพาะเชื้อและทดสอบคุณสมบัติทางชีวเคมี ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (20, 'เพาะแยกเชื้อ ทดสอบคุณสมบัติทางชีวเคมี ทดสอบทางซีโรโลยี และทดสอบยาต้านจุลชีพ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (21, 'เพาะแยกเชื้อ ทดสอบคุณสมบัติทางชีวเคมี ทดสอบทางซีโรโลยี และน้ำเหลืองวิทยา เพื่อหาซีโรวาร์ของเชื้อ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (22, 'เพาะเชื้อ ทดสอบคุณสมบัติทางชีวเคมีและทดสอบยืนยันชนิดเชื้อด้วยน้ำยาสำเร็จรูป ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (23, 'ICP-MS-MS', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (24, 'GFAAS', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (25, 'ELFA', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (26, 'Micro-NT', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (27, 'IFA', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (28, 'MAT', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (29, 'TLC, LC-MS-MS, ตรวจสอบทางสัณฐานวิทยา', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (30, 'compression และ digestion', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (31, 'Latex agglutination', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (32, 'Nested PCR and Sequencing', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (33, 'การเพาะแยกเชื้อ Clostridium botulinum', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (34, 'Serotyping', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (35, 'Multiplex PCR ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (36, 'Cell adherence assay', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (37, 'Disk Diffusion ', 1, '2019-11-26');
+INSERT INTO `examination_method` VALUES (38, 'Multiplex PCR', 1, '2019-11-26');
+
+-- ----------------------------
+-- Table structure for laboratory
+-- ----------------------------
+DROP TABLE IF EXISTS `laboratory`;
+CREATE TABLE `laboratory`  (
+  `id` int(50) NOT NULL,
+  `th_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `en_name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `th_initials` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `en_initials` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `status` int(5) NULL DEFAULT NULL,
+  `date_add` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of laboratory
+-- ----------------------------
+INSERT INTO `laboratory` VALUES (1, 'สถาบันวิจัยวิทยาศาสตร์สาธารณสุข', 'National Institute of Health of Thailand', 'สวส', 'NIH', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (2, 'ศูนย์โรคติดต่อ โรคอุบัติใหม่ สภากาชาดไทย ', 'Thai Red Cross Emerging Infectious Disease Health Science Centre', 'TRC-EID', 'TRC-EID', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (3, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 1 เชียงใหม่', 'Regional Medical Sciences Center 1 Chiang Mai', 'ศวก1', 'RMSC 1', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (4, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 1/1 เชียงราย', 'Regional Medical Sciences Center 1/1 Chiang Rai', 'ศวก1/1', 'RMSC 1/1', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (5, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 2 พิษณุโลก', 'Regional Medical Sciences Center 2 Phitsanulok', 'ศวก2', 'RMSC 2', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (6, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 3 นครสวรรค์', 'Regional Medical Sciences Center 3 Nakhon Sawan', 'ศวก3', 'RMSC 3', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (7, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 5 สมุทรสงคราม', 'Regional Medical Sciences Center 5 Samut Songkhram', 'ศวก5', 'RMSC 5', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (8, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 6 ชลบุรี', 'Regional Medical Sciences Center 6 Chonburi', 'ศวก6', 'RMSC 6', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (9, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 7 ขอนแก่น', 'Regional Medical Sciences Center 7 Khon Kaen', 'ศวก7', 'RMSC7', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (10, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 8 อุดรธานี', 'Regional Medical Sciences Center 8 Udon Thani ', 'ศวก8', 'RMSC8', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (11, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 9 นครราชสีมา', 'Regional Medical Sciences Center 9 Nakhon Ratchasima', 'ศวก9', 'RMSC9', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (12, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 10 อุบลราชธานี', 'Regional Medical Sciences Center 10 Ubon Ratchathani', 'ศวก10', 'RMSC10', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (13, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 11 สุราษฏร์ธานี', 'Regional Medical Sciences Center 11 Surat Thani ', 'ศวก11', 'RMSC11', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (14, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 11/1 ภูเก็ต', 'Regional Medical Sciences Center 11/1 Phuket', 'ศวก11/1', 'RMSC11/1', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (15, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 12 สงขลา', 'Regional Medical Sciences Center 12 Songkhla', 'ศวก12', 'RMSC12', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (16, 'ศูนย์วิทยาศาสตร์การแพทย์ที่ 12/1 ตรัง', 'Regional Medical Sciences Center 12/1 Trang', 'ศวก12/1', 'RMSC12/1', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (17, 'ห้องปฏิบัติการ คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี มหาลัยมหิดล', 'Faculty of Medicine Ramathibodi Hospital Mahidol University', 'RAMA', 'RAMA', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (18, 'สถาบันบำราศนราดูร ', 'Bamrasnaradura Infectious Diseases InstituteMahidol University', 'BIDI', 'BIDI', 1, '0000-00-00');
+INSERT INTO `laboratory` VALUES (19, 'มหาลัยมหิดล คณะสัตวแพทย์ศาสตร์', 'Faculty of Veterinary Science,Mahidol University', 'MU Vet', 'MU Vet', 1, '0000-00-00');
+
+-- ----------------------------
+-- Table structure for objective_of_examination
+-- ----------------------------
+DROP TABLE IF EXISTS `objective_of_examination`;
+CREATE TABLE `objective_of_examination`  (
+  `id` int(50) NOT NULL,
+  `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `status` int(5) NULL DEFAULT NULL,
+  `date_add` varchar(90) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of objective_of_examination
+-- ----------------------------
+INSERT INTO `objective_of_examination` VALUES (1, 'ตรวจหาสารพันธุกรรม', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (2, 'ตรวจแอนติบอดีชนิด IgM', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (3, 'ตรวจแอนติบอดีชนิด IgG', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (4, 'ตรวจแอนติบอดีชนิด IgM และ IgG', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (5, 'ตรวจยืนยัน serotype ของเชื้อ', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (6, 'ตรวจวินิจฉัยโรค', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (7, 'ตรวจยืนยันเชื้อแบคทีเรีย', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (8, 'ตรวจหาเชื้อแบคทีเรียก่อโรคในระบบทางเดินหายใจ', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (9, 'ตรวจวินิจฉัยแยกชนิดเชื้อ', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (10, 'ตรวจหาเชื้อแบคทีเรียก่อโรคในระบบทางเดินอาหาร', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (11, 'ตรวจหาปริมาณไอโอดีน', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (12, 'ตรวจหาตะกั่ว', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (13, 'ตรวจหาปรอท', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (14, 'ตรวจหาแคดเมียม', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (15, 'ตรวจหาแมงกานีส', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (16, 'ตรวจหาสารพิษ', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (17, 'ตรวจวิเคราะห์การติดเชื้อวัณโรค', 1, '2019-11-26');
+INSERT INTO `objective_of_examination` VALUES (18, 'ตรวจหาพยาธิจากเนื้อสัตว์และผลิตภัณฑ์', 1, '2019-11-26');
+
+-- ----------------------------
+-- Table structure for sample_type
+-- ----------------------------
+DROP TABLE IF EXISTS `sample_type`;
+CREATE TABLE `sample_type`  (
+  `id` int(50) NOT NULL,
+  `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `status` int(9) NULL DEFAULT NULL,
+  `date_add` varchar(90) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Records of sample_type
+-- ----------------------------
+INSERT INTO `sample_type` VALUES (1, 'Throat swab', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (2, 'Nasopharyngeal swab', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (3, 'Rectal swab', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (4, 'Throat swab & Nasopharyngeal swab', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (5, 'Tracheal suction', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (6, 'Traeheal aspirate', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (7, 'Serum', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (8, 'Plasma', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (9, 'เชื้อบริสุทธิ์', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (10, 'Urine', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (11, 'Sputum', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (12, 'Hair follicles with root', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (13, 'Brain Tissue', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (14, 'Saliva', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (15, 'Clotted blood', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (16, 'EDTA blood', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (17, 'Stool', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (18, 'อาเจียน', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (19, 'CSF', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (20, 'Breast milk', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (21, 'Umbilical Cord Blood', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (22, 'Amniotic fluid', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (23, 'Placenta', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (24, 'อาหาร', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (25, 'น้ำดื่ม', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (26, 'น้ำประปา', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (27, 'น้ำแข็ง', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (28, 'Swab เขียง', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (29, 'Swab มือ', 1, '2019-11-26');
+INSERT INTO `sample_type` VALUES (30, 'เห็ด', 1, '2019-11-26');
+
+SET FOREIGN_KEY_CHECKS = 1;

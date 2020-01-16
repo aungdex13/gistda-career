@@ -55,27 +55,31 @@
 								echo $url_rediect;
 
 						}
-		// 	if($request)
-		// 		{
-		// $file=	$request->file('file_name');
-		// $filename=$file->getClientOriginalName();
-		// Storage::put($filename, $contents);
-		 				// ->store('file_upload');
-		// 	if($request)
-		// 		{
-		// $file=	$request->file('file_name');
-		// $filename=$file->getClientOriginalName();
-		// 		dd($filename);
-		// 			if($files=$request->file('images')){
-		// 		$name=$files->getClientOriginalName();
-		// 		$files->move('image',$name);
-		// 		DB::table('img')->insert([
-		// 		'image' => $name
-				// ]);
-			 //
+
 			   }
+
 public function attachmentindex(Request $req){
-	return view('apps.attachment');
+	$listfile= DB::table('tbl_file_upload')
+									->select('*')
+									->where('user_id', '1' )
+									->where('status', '1')
+									->get();
+	return view('apps.attachment',compact(
+	 'listfile'
+ ));
 }
+public function deletefile(Request $req){
+	$deletefile= DB::table('tbl_file_upload')
+            ->where('filename', $_GET['filename'])
+            ->update(['status' => 2]);
+	if ($deletefile){
+									$msg = " ลบข้อมูลสำเร็จ";
+									$url_rediect = "<script>alert('".$msg."'); window.location='attachment';</script> ";
+								}else{
+									$msg = " ลบข้อมูลไม่สำเร็จ";
+									$url_rediect = "<script>alert('".$msg."');window.location='attachment';</script> ";
+									}
+									echo $url_rediect;
+							}
 
 }
