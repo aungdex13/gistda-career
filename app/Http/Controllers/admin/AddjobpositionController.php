@@ -72,13 +72,70 @@ public function jobpositionindex(Request $req){
 	$list=$this->prov();
 	$listfile= DB::table('tbl_position')
 									->select('*')
-									->where('user_id', '1' )
+									->whereIn('status',[1,2] )
 									->get();
 	return view('admin.jobposition',compact(
 		'listfile',
 	 'list'
  ));
 }
+public function deleteposition(Request $req){
+	$deleteposition= DB::table('tbl_position')
+            ->where('id', $_GET['id'])
+            ->update(['status' => 3]);
+	if ($deleteposition){
+									$msg = " ลบข้อมูลสำเร็จ";
+									$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+								}else{
+									$msg = " ลบข้อมูลไม่สำเร็จ";
+									$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+									}
+									echo $url_rediect;
+							}
+
+public function changesposition(Request $req){
+	$status = $_GET['status'];
+	$date_update = date('Y-m-d');
+	// dd($date_update);
+	$updateDetails_1 = [
+    'status' => '2',
+		'date_update' => $date_update
+];
+$updateDetails_2 = [
+	'status' => '1',
+	'date_update' => $date_update
+];
+	 // dd($status);
+	if($status == "1") {
+		$changesposition= DB::table('tbl_position')
+							->where('id', $_GET['id'])
+							->where('status', 1)
+							->update($updateDetails_1);
+							if ($changesposition){
+															$msg = " เปลี่ยนสถานะข้อมูลสำเร็จ";
+															$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+														}else{
+															$msg = " เปลี่ยนสถานะข้อมูลไม่สำเร็จ";
+															$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+															}
+															echo $url_rediect;
+													}
+elseif ($status == "2") {
+			$changesposition= DB::table('tbl_position')
+								->where('id', $_GET['id'])
+								->where('status', 2)
+								->update($updateDetails_2);
+								if ($changesposition){
+																$msg = " เปลี่ยนสถานะข้อมูลสำเร็จ";
+																$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+															}else{
+																$msg = " เปลี่ยนสถานะข้อมูลไม่สำเร็จ";
+																$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+																}
+																echo $url_rediect;
+														}
+}
+
 
 public function prov(){
 	$list=DB::table('tbl_provinces')

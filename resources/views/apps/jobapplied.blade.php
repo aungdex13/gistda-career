@@ -11,77 +11,42 @@
 					<form action="#" class="">
 							<p class="lead">
 								{{-- <a href="#" class="btn btn-success" data-toggle="modal" data-target="#job-available-Modal">Select Job</a> --}}
-			    <table id="example" class="display text-black" style="width:90%">
-			            <thead>
-			                <tr>
-			            <th>#</th>
-									<th>Position</th>
-									<th>Job Post date</th>
-									<th>Salary</th>
-									<th>Action</th>
-			                </tr>
-			            </thead>
-			            <tbody>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Financial Controller</td>
-			                    <td>62</td>
-			                    <td>2009/02/14</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Office Manager</td>
-			                    <td>37</td>
-			                    <td>2008/12/11</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Director</td>
-			                    <td>65</td>
-			                    <td>2008/09/26</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Support Engineer</td>
-			                    <td>64</td>
-			                    <td>2011/02/03</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Software Engineer</td>
-			                    <td>38</td>
-			                    <td>2011/05/03</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Javascript Developer</td>
-			                    <td>29</td>
-			                    <td>2011/06/27</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			                <tr>
-			          <td><input type="radio" name="answer"></td>
-			                    <td>Customer Support</td>
-			                    <td>27</td>
-			                    <td>2011/01/25</td>
-			                    <td><a href="#" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">View</a></td>
-			                </tr>
-			            </tbody>
-			            <tfoot>
-			                <tr>
-													<th>#</th>
-			                    <th>Position</th>
-			                    <th>Job Post date</th>
-			                    <th>Salary</th>
-			                    <th>Action</th>
-			                </tr>
-			            </tfoot>
-			        </table>
+								<table id="example" class="display text-black" style="width:90%">
+						            <thead>
+						                <tr>
+												<th>Position</th>
+												<th>Job Post date</th>
+												<th>status</th>
+												<th>Action</th>
+						                </tr>
+						            </thead>
+			                  <tbody>
+			          					<?php foreach($listfile as $value) : ?>
+			          					<tr>
+			          						<th scope="row">{{ $value->position_name }}</th>
+			          						<td>{{ $value->job_post_date }}</td>
+			          						<td>{{ $value->status }}</td>
+			          						<td>
+															<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#changes">
+																	เปลี่ยนสถานะ
+															</button>
+															<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+																	ลบข้อมูล
+															</button>
+
+			          						</td>
+			          					</tr>
+			          					<?php endforeach;?>
+			          				</tbody>
+						            <tfoot>
+						                <tr>
+															<th>Position</th>
+															<th>Job Post date</th>
+															<th>status</th>
+															<th>Action</th>
+						                </tr>
+						            </tfoot>
+						        </table>
 			  </p>
 					</form>
 			</div>

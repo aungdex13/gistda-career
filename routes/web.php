@@ -11,27 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('apps.index');
-});
-
-Route::get('/jobapplied', function () {
-    return view('apps.jobapplied');
-});
-
+Route::get('/', 'apps\JobavailableController@jobavailableindex')->name('/');
+Route::get('/test/ajax', 'apps\JobavailableController@test')->name('test');
 // function insert tbl_resume
 Route::get('/resume', 'apps\ResumeController@resumeindex')->name('resume');
 Route::post('/insertdataresume', 'apps\ResumeController@insertresume')->name('insertdataresume');
 Route::post('/resume/fetch', 'apps\ResumeController@fetch')->name('dropdown.fetch');
 Route::post('/resume/fetchD', 'apps\ResumeController@fetchD')->name('dropdown.fetchD');
-
 // attachment
 Route::get('/attachment', 'apps\AttachmentController@attachmentindex')->name('attachment');
 Route::post('/uploadfile', 'apps\AttachmentController@uploadFilePost')->name('uploadfile');
 Route::get('/deletefile', 'apps\AttachmentController@deletefile')->name('deletefile');
+// Jobapplied
+Route::get('/jobapplied', 'apps\JobController@jobappliedindex')->name('jobapplied');
+
+
 
 // admin session
 // addjobposition
 Route::get('/addjobposition', 'admin\AddjobpositionController@addjobpositionindex')->name('addjobposition');
 Route::post('/insertposition', 'admin\AddjobpositionController@insertposition')->name('insertposition');
 Route::get('/jobposition', 'admin\AddjobpositionController@jobpositionindex')->name('jobposition');
+Route::get('/deleteposition', 'admin\AddjobpositionController@deleteposition')->name('deleteposition');
+Route::get('/changesposition', 'admin\AddjobpositionController@changesposition')->name('changesposition');

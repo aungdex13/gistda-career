@@ -26,9 +26,10 @@
 						<td>{{ $value->originalfilename }}</td>
 						<td>{{ $value->date_entry }}</td>
 						<td>
-							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-									ลบข้อมูล
-							</button>
+							<a href="#myModal" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบข้อมูล</a>
+							<!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"> -->
+
+							<!-- </button> -->
 
 						</td>
 					</tr>
@@ -89,7 +90,8 @@
 </div>
 <!-- Modal footer -->
 <div class="modal-footer">
-<a class="btn btn-danger" href="{{ 'deletefile' }}?filename=<?php echo $filename = (isset($value->filename)) ? $value->filename : '0';?> ">ยืนยัน</a>
+<?php echo $value->filename; ?>
+<a class="btn btn-danger" href="{{ 'deletefile' }}?filename=<?php echo $filename = (isset($value->filename)) ? $value->filename : '0';?>&status=<?php echo $status = (isset($value->status)) ? $value->status : '0';?> ">ยืนยัน</a>
 <button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
 </div>
 

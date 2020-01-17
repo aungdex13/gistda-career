@@ -36,10 +36,12 @@
           						<td>{{ $value->job_post_date }}</td>
           						<td>{{ $value->status }}</td>
           						<td>
-                        <a class="btn btn-info" href="{{ 'addjobposition' }}?user_id=123456">เปลี่ยนสถานะ</a>
-          							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-          									ลบข้อมูล
-          							</button>
+												<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#changes">
+														เปลี่ยนสถานะ
+												</button>
+												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+														ลบข้อมูล
+												</button>
 
           						</td>
           					</tr>
@@ -47,11 +49,10 @@
           				</tbody>
 			            <tfoot>
 			                <tr>
-													<th>#</th>
-			                    <th>Position</th>
-			                    <th>Job Post date</th>
-			                    <th>Salary</th>
-			                    <th>Action</th>
+												<th>Position</th>
+												<th>Job Post date</th>
+												<th>status</th>
+												<th>Action</th>
 			                </tr>
 			            </tfoot>
 			        </table>
@@ -65,6 +66,53 @@
 	</div>
 	</div>
 	</div>
+	<!-- The Modal -->
+<div class="modal fade" id="delete">
+<div class="modal-dialog">
+<div class="modal-content">
+<!-- Modal Header -->
+<div class="modal-header">
+<h4 class="modal-title"><font color="#FFC300">WARNING:</font></h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+
+<!-- Modal body -->
+<div class="modal-body">
+	หากท่านต้องการลบข้อมูลที่เลือกให้กดปุ่ม "<font color="red">ยืนยัน</font>" หรือหากต้องการยกเลิกการลบข้อมูลให้กดปุ่ม "ยกเลิก"
+</div>
+<!-- Modal footer -->
+<div class="modal-footer">
+<a class="btn btn-danger" href="{{ 'deleteposition' }}?id=<?php echo $id = (isset($value->id)) ? $value->id : '0';?> ">ยืนยัน</a>
+<button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="changes">
+<div class="modal-dialog">
+<div class="modal-content">
+<!-- Modal Header -->
+<div class="modal-header">
+<h4 class="modal-title"><font color="#FFC300">WARNING:</font></h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+
+<!-- Modal body -->
+<div class="modal-body">
+หากท่านต้องการเปลี่ยนสถานะข้อมูลที่เลือกให้กดปุ่ม "<font color="success">ยืนยัน</font>" หรือหากต้องการยกเลิกการการเปลี่ยนสถานะข้อมูลให้กดปุ่ม "ยกเลิก"
+</div>
+<!-- Modal footer -->
+<div class="modal-footer">
+<a class="btn btn-warning" href="{{ 'changesposition' }}?id=<?php echo $id = (isset($value->id)) ? $value->id : '0';?>&status=<?php echo $id = (isset($value->status)) ? $value->status : '0';?> ">ยืนยัน</a>
+<button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
+</div>
+
+</div>
+</div>
+</div>
 </section>
 @include('layout.footer')
 </div> <!-- .site-wrap -->

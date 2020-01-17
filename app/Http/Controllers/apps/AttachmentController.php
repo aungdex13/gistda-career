@@ -18,20 +18,21 @@
 			$a=1;
 
 			$file=	$request->file('file_name');
-			$path = Storage::putFile('file_upload/'.$a, $file);
+			$path = Storage::putFile('file_upload', $file);
 
 						if($path){
 							$filename=$file->getClientOriginalName();
 							// dd($filename);
 							$user_id = $a;
 							$title_file_name = (isset($_POST['title_file_name'])) ? $_POST['title_file_name'] : '0';
-							$filenamegenerate=str_replace("file_upload/".$a."/" ,"", $path);
+							$filenamegenerate=str_replace("file_upload/" ,"", $path);
 							$file_type=strstr($filename, ".");
 							$filename = $filename;
 							$originalfilename = $filename;
 							$path = $path;
 							$status = $a;
 							$date_entry = date('Y-m-d');
+							$date_update = date('Y-m-d');
 									$data = array(
 										'user_id' => $user_id,
 										'title_file_name' => $title_file_name,
@@ -40,7 +41,8 @@
 										'originalfilename' => $originalfilename,
 									'path' => $path,
 									'status' => $status,
-									'date_entry' => $date_entry
+									'date_entry' => $date_entry,
+									'date_update' => $date_update
 								);
 							  // dd($data);
 							$res1	= DB::table('tbl_file_upload')->insert($data);
@@ -69,9 +71,16 @@ public function attachmentindex(Request $req){
  ));
 }
 public function deletefile(Request $req){
+	$status = $_GET['status'];
+	$date_update = date('Y-m-d');
+	// dd($date_update);
+	$updateDetails_1 = [
+		'status' => '2',
+		'date_update' => $date_update
+];
 	$deletefile= DB::table('tbl_file_upload')
             ->where('filename', $_GET['filename'])
-            ->update(['status' => 2]);
+            ->update($updateDetails_1);
 	if ($deletefile){
 									$msg = " ลบข้อมูลสำเร็จ";
 									$url_rediect = "<script>alert('".$msg."'); window.location='attachment';</script> ";
