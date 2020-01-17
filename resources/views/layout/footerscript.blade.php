@@ -13,34 +13,3 @@
 <!-- datatable -->
 <script src="assets/js/datatable/jquery.dataTables.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-<script>
-$(document).ready(function() {
-
-  $.ajaxSetup({
-      header:{
-        'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-      }
-    });
-
-
-    $(#viewjob).click(function() {
-      alert('o');
-          $.ajax({
-              type: "GET",
-              url: "{{ route('test') }}",
-              data: ({ x : 1 }),
-              dataType: "html",
-              success: function(data) {
-                $('#job-available-Modal').html(data);
-              },
-              error: function() {
-                  alert('Error occured');
-              }
-          });
-
-        });
-        */
-      });
-
-</script>
