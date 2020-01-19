@@ -176,5 +176,30 @@ foreach ($queryD as $rowD) {
 echo $outputD;
 
 }
-
+public function jobpositionajax(Request $req){
+	$id = $_POST['id'];
+	// echo $filename;
+	$result=array();
+	$query=DB::table('tbl_position')
+									->select('*')
+									->where('id', $id )
+									->get();
+		foreach ($query as $row) {
+				$link='<a class="btn btn-danger" href="changesposition?id='.$row->id.'&status='.$row->status.'">ยืนยัน</option>';
+		}
+	 echo $link;
+							}
+							public function deletejobpositionajax(Request $req){
+								$id = $_POST['id'];
+								// echo $filename;
+								$result=array();
+								$query=DB::table('tbl_position')
+																->select('*')
+																->where('id', $id )
+																->get();
+									foreach ($query as $row) {
+											$link='<a class="btn btn-danger" href="deleteposition?id='.$row->id.'">ยืนยัน</option>';
+									}
+								 echo $link;
+														}
 }

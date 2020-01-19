@@ -91,4 +91,19 @@ public function deletefile(Request $req){
 									echo $url_rediect;
 							}
 
+							public function attachmentajax(Request $req){
+								$filename = $_POST['filename'];
+								// echo $filename;
+								$result=array();
+								$query=DB::table('tbl_file_upload')
+																->select('*')
+																->where('filename', $filename )
+																->get();
+									foreach ($query as $row) {
+											$link='<a class="btn btn-danger" href="deletefile?filename='.$row->filename.'&status='.$row->status.'">ยืนยัน</option>';
+									}
+								 echo $link;
+														}
+
+
 }

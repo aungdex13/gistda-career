@@ -27,7 +27,7 @@
                     <td>{{ $value->age }}</td>
                     <td>{{ $value->saraly }}</td>
                     <td>
-                    <a href="#job-available-Modal" type="button" class="btn btn-info" data-toggle="modal" data-target="#job-available-Modal">
+                    <a href="#job-available-Modal" type="button" class="btn btn-info jobavailablestatus" data-id="{{ $value->id }}" data-toggle="modal" data-target="#job-available-Modal">
                         View
                     </a>
                     </td>

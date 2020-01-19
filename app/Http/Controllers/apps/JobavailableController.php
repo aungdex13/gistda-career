@@ -106,9 +106,50 @@ foreach ($queryD as $rowD) {
 echo $outputD;
 
 }
-
-public function test() {
-	echo "<b>testxxxx</b>";
-}
+public function jobavailableajax(Request $req){
+	$id = $_POST['id'];
+	// echo $filename;
+	$result=array();
+	$query=DB::table('tbl_position')
+									->select('*')
+									->where('id', $id )
+									->get();
+		foreach ($query as $row) {
+				$link='<p class="lead">Job Descriptions :</p>
+								<p class="text-muted mb-4">'
+									.$row->job_descriptions.
+								'</p>
+								<p class="lead">Education :</p>
+								<p class="text-muted mb-4">'
+										.$row->education.
+								'</p>
+								<p class="lead">Experiences :</p>
+								<p class="text-muted mb-4">'
+										.$row->experiences.
+								'</p>
+								<p class="lead">Attributes :</p>
+								<p class="text-muted mb-4">'
+										.$row->attributes.
+								'</p>
+								<p class="lead">Gender :</p>
+								<p class="text-muted mb-4">'
+										.$row->gender.
+								'</p>
+								<p class="lead">Age :</p>
+								<p class="text-muted mb-4">'
+										.$row->age.
+								'</p>
+								<p class="lead">Saraly :</p>
+								<p class="text-muted mb-4">'
+										.$row->saraly.
+								'</p>
+								<p class="lead">Job Post Date :</p>
+								<p class="text-muted mb-4">'
+										.$row->job_post_date.
+								'</p>'
+								;
+		}
+	 echo $link;
+							}
 
 }

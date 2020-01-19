@@ -36,10 +36,10 @@
           						<td>{{ $value->job_post_date }}</td>
           						<td>{{ $value->status }}</td>
           						<td>
-												<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#changes">
+												<button type="button" class="btn btn-warning jobpositionchangestatus" data-id="{{ $value->id }}" data-toggle="modal" data-target="#changes">
 														เปลี่ยนสถานะ
 												</button>
-												<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete">
+												<button type="button" class="btn btn-danger jobpositiondeletestatus" data-id="{{ $value->id }}" data-toggle="modal" data-target="#delete">
 														ลบข้อมูล
 												</button>
 
@@ -82,7 +82,8 @@
 </div>
 <!-- Modal footer -->
 <div class="modal-footer">
-<a class="btn btn-danger" href="{{ 'deleteposition' }}?id=<?php echo $id = (isset($value->id)) ? $value->id : '0';?> ">ยืนยัน</a>
+	<div id="filedelete">
+	</div>
 <button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
 </div>
 
@@ -105,9 +106,12 @@
 หากท่านต้องการเปลี่ยนสถานะข้อมูลที่เลือกให้กดปุ่ม "<font color="success">ยืนยัน</font>" หรือหากต้องการยกเลิกการการเปลี่ยนสถานะข้อมูลให้กดปุ่ม "ยกเลิก"
 </div>
 <!-- Modal footer -->
-<div class="modal-footer">
-<a class="btn btn-warning" href="{{ 'changesposition' }}?id=<?php echo $id = (isset($value->id)) ? $value->id : '0';?>&status=<?php echo $id = (isset($value->status)) ? $value->status : '0';?> ">ยืนยัน</a>
+<div  class="modal-footer">
+<div id="filechange">
+</div>
+<div>
 <button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
+</div>
 </div>
 
 </div>
@@ -122,6 +126,50 @@ $(document).ready(function() {
     $('#example').DataTable();
 } );
 
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$(".jobpositionchangestatus").click(function() {
+var id = $(this).attr('data-id');
+	$.ajax({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+},
+		type: "POST",
+		url: "{{ url('jobposition/jobpositionajax') }}",
+		data: {'id': id},
+		success: function(result) {
+			$('#filechange').html(result);
+		},
+		error: function() {
+			alert('err');
+		}
+	});
+});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$(".jobpositiondeletestatus").click(function() {
+var id = $(this).attr('data-id');
+	$.ajax({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+},
+		type: "POST",
+		url: "{{ url('jobposition/deletejobpositionajax') }}",
+		data: {'id': id},
+		success: function(result) {
+			$('#filedelete').html(result);
+		},
+		error: function() {
+			alert('err');
+		}
+	});
+});
+});
 </script>
 </body>
 

@@ -26,7 +26,7 @@
 						<td>{{ $value->originalfilename }}</td>
 						<td>{{ $value->date_entry }}</td>
 						<td>
-							<a href="#myModal" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบข้อมูล</a>
+							<a href="#myModal" class="btn btn-danger attach" data-id="{{ $value->filename }}" data-toggle="modal" data-target="#myModal">ลบข้อมูล</a>
 							<!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"> -->
 
 							<!-- </button> -->
@@ -46,8 +46,6 @@
     </table>
 							</div>
 						</div>
-							<br>
-
 							<form action="/uploadfile" method="post" enctype="multipart/form-data">
 									@csrf
 					<div class="pt-5">
@@ -85,14 +83,17 @@
 </div>
 
 <!-- Modal body -->
-<div class="modal-body">
+<div class="modal-body" >
+
 	หากท่านต้องการลบข้อมูลที่เลือกให้กดปุ่ม "<font color="red">ยืนยัน</font>" หรือหากต้องการยกเลิกการลบข้อมูลให้กดปุ่ม "ยกเลิก"
 </div>
 <!-- Modal footer -->
-<div class="modal-footer">
-<?php echo $value->filename; ?>
-<a class="btn btn-danger" href="{{ 'deletefile' }}?filename=<?php echo $filename = (isset($value->filename)) ? $value->filename : '0';?>&status=<?php echo $status = (isset($value->status)) ? $value->status : '0';?> ">ยืนยัน</a>
+<div  class="modal-footer">
+<div id="file1">
+</div>
+<div>
 <button type="button" class="btn" style="background-color: #e7e7e7;" data-dismiss="modal">ยกเลิก</button>
+</div>
 </div>
 
 </div>
@@ -108,5 +109,27 @@
 $(document).ready(function() {
 	$('#file_attachment').DataTable();
 } );
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$(".attach").click(function() {
+var filename = $(this).attr('data-id');
+	$.ajax({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+},
+		type: "POST",
+		url: "{{ url('/attachment/attachmentajax') }}",
+		data: {'filename': filename},
+		success: function(result) {
+			$('#file1').html(result);
+		},
+		error: function() {
+			alert('err');
+		}
+	});
+});
+});
 </script>
 </html>

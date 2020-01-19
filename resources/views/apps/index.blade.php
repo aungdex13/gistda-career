@@ -17,5 +17,27 @@ $(document).ready(function() {
 } );
 
 </script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+$(".jobavailablestatus").click(function() {
+var id = $(this).attr('data-id');
+	$.ajax({
+		headers: {
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+},
+		type: "POST",
+		url: "{{ url('/jobavailableajax') }}",
+		data: {'id': id},
+		success: function(result) {
+			$('#filejobavaliable').html(result);
+		},
+		error: function() {
+			alert('err');
+		}
+	});
+});
+});
+</script>
   </body>
 </html>
