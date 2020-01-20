@@ -7,10 +7,6 @@
 
       <div class="modal-body" id="filejobavaliable">
       </div>
-      <div class="modal-footer">
-	  	<button type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
 	</div>
 
 	</div>

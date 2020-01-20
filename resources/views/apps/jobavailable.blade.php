@@ -3,11 +3,11 @@
     <div class="row justify-content-center" data-aos="fade-up">
       <div class="col-lg-12 align-self-center mr-auto text-left heading-section mb-12">
         <div class="paws ml-4">
-          <span class="icon-paw"></span>
+          <span class="icon-space-shuttle"></span>
         </div>
-        <h2 class="text-black mb-12">About Us</h2>
+        <h2 class="text-black mb-12">Job Available</h2>
         <p class="lead">
-    <table id="example" class="display text-black" style="width:100%">
+    <table id="example" class="display text-black form-group" style="width:100%">
             <thead>
                 <tr>
                     <th>Position</th>

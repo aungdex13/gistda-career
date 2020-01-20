@@ -4,9 +4,9 @@
     <div class="row justify-content-center" data-aos="fade-up">
       <div class="col-lg-6 text-center heading-section mb-5">
         <div class="paws">
-          <span class="icon-paw"></span>
+          <span class="icon-space-shuttle"></span>
         </div>
-        <h2 class="text-black mb-2">Happy Customers</h2>
+        <h2 class="text-black mb-2">Welfare & Benefit</h2>
       </div>
     </div>
     <div  data-aos="fade-up" data-aos-delay="200">

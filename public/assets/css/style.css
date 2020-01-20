@@ -1819,13 +1819,13 @@ figure figcaption {
     color: #a2c0be;
     opacity: .3; }
   .paws:before {
-    content: "\f1b0";
+    content: "\f0ac";
     left: -30px;
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   .paws:after {
-    content: "\f1b0";
+    content: "\f0ac";
     right: -30px;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

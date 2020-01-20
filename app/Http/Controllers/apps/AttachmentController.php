@@ -100,7 +100,7 @@ public function deletefile(Request $req){
 																->where('filename', $filename )
 																->get();
 									foreach ($query as $row) {
-											$link='<a class="btn btn-danger" href="deletefile?filename='.$row->filename.'&status='.$row->status.'">ยืนยัน</option>';
+											$link='<a class="btn btn-danger" href="deletefile?filename='.$row->filename.'&status='.$row->status.'">ยืนยัน</a>';
 									}
 								 echo $link;
 														}

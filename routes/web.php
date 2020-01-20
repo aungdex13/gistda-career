@@ -13,6 +13,7 @@
 
 Route::get('/', 'apps\JobavailableController@jobavailableindex')->name('/');
 Route::post('/jobavailableajax', 'apps\JobavailableController@jobavailableajax')->name('/jobavailableajax');
+Route::get('insertjobavailable', 'apps\JobavailableController@insertjobavailable')->name('insertjobavailable');
 // function insert tbl_resume
 Route::get('/resume', 'apps\ResumeController@resumeindex')->name('resume');
 Route::post('/insertdataresume', 'apps\ResumeController@insertresume')->name('insertdataresume');

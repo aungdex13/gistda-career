@@ -3,9 +3,9 @@
       <div class="row justify-content-center" data-aos="fade-up">
         <div class="col-lg-5 align-self-center mr-auto text-left heading-section mb-5">
           <div class="paws ml-4">
-            <span class="icon-paw"></span>
+            <span class="icon-space-shuttle"></span>
           </div>
-          <h2 class="text-black mb-3">About Us</h2>
+          <h2 class="text-black mb-3">Intership</h2>
           <p class="lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
           <p class="text-muted mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
           <ul class="list-unstyled ul-paw primary mb-0">

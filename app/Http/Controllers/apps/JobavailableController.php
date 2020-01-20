@@ -16,38 +16,24 @@
 		public function insertjobavailable(Request $req)
 	 	{
       $user_id = (isset($_POST['user_id '])) ? $_POST['user_id'] : '0';
-      $year_of_applied = (isset($_POST['year_of_applied'])) ? $_POST['year_of_applied'] : '0';
-      $date_of_applied = (isset($_POST['date_of_applied'])) ? $_POST['date_of_applied'] : '0';
-      $number_of_applied = (isset($_POST['number_of_applied'])) ? $_POST['number_of_applied'] : '0';
-      $position_of_applied = (isset($_POST['position_of_applied'])) ? $_POST['position_of_applied'] : '0';
-      $applied_announcement = (isset($_POST['applied_announcement'])) ? $_POST['applied_announcement'] : '0';
-      $title_name = (isset($_POST['title_name'])) ? $_POST['title_name'] : '0';
-      $first_name_th = (isset($_POST['first_name_th'])) ? $_POST['first_name_th'] : '0';
-      $last_name_th = (isset($_POST['last_name_th'])) ? $_POST['last_name_th'] : '0';
-      $first_name_en = (isset($_POST['first_name_en'])) ? $_POST['first_name_en'] : '0';
-      $last_name_en = (isset($_POST['last_name_en'])) ? $_POST['last_name_en'] : '0';
+			// dd($user_id);
+      $position_id = (isset($_POST['position_id'])) ? $_POST['position_id'] : '0';
+      $status = (isset($_POST['status'])) ? $_POST['status'] : '0';
       $date_entry = date('Y-m-d');
+			$date_update = date('Y-m-d');
 		$data = array(
       'user_id' => $user_id,
-      'year_of_applied' => $year_of_applied,
-    'date_of_applied' => $date_of_applied,
-    'number_of_applied' => $number_of_applied,
-    'position_of_applied' => $position_of_applied,
-    'applied_announcement' => $applied_announcement,
-    'title_name' => $title_name,
-    'first_name_th' => $first_name_th,
-    'last_name_th' => $last_name_th,
-    'first_name_en' => $first_name_en,
-    'last_name_en' => $last_name_en,
-    'date_entry' => $date_entry
-
+      'position_id' => $position_id,
+    'status' => $status,
+    'date_entry' => $date_entry,
+    'date_update' => $date_update
 		);
-	 // dd($data);
-	$res1	= DB::table('tbl_job_applied')->insert($data);
+
+	$res1	= DB::table('tbl_select_job')->insert($data);
 	 // dd($res1);
 	if ($res1){
 		$msg = " ส่งข้อมูลสำเร็จ";
-		$url_rediect = "<script>alert('".$msg."'); window.location='jobapplied';</script> ";
+		$url_rediect = "<script>alert('".$msg."'); window.location='#job-available-section';</script> ";
 	}else{
 		$msg = " ส่งข้อมูลไม่สำเร็จ";
 		$url_rediect = "<script>alert('".$msg."');</script> ";
@@ -146,8 +132,11 @@ public function jobavailableajax(Request $req){
 								<p class="lead">Job Post Date :</p>
 								<p class="text-muted mb-4">'
 										.$row->job_post_date.
-								'</p>'
-								;
+								'</p>
+								<div class="modal-footer">
+								<a class="btn btn-danger" href="insertjobavailable?filename='.$row->id.'&status='.$row->status.'">ยืนยัน</a>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+								</div>';
 		}
 	 echo $link;
 							}

@@ -3,7 +3,7 @@
       <div class="row justify-content-center" data-aos="fade-up">
         <div class="col-lg-7 text-center heading-section mb-5">
           <div class="paws white">
-            <span class="icon-paw"></span>
+            <span class="icon-space-shuttle"></span>
           </div>
           <h2 class="mb-2 heading">CONTACT US</h2>
           <p></p>
