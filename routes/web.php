@@ -25,9 +25,9 @@ Route::post('/attachment/attachmentajax', 'apps\AttachmentController@attachmenta
 Route::post('/uploadfile', 'apps\AttachmentController@uploadFilePost')->name('uploadfile');
 Route::get('/deletefile', 'apps\AttachmentController@deletefile')->name('deletefile');
 // Jobapplied
-Route::get('/jobapplied', 'apps\JobController@jobappliedindex')->name('jobapplied');
-
-
+Route::get('/jobapplied', 'apps\JobappliedController@jobapplied')->name('jobapplied');
+Route::post('jobapplied/deletejobappliedajax', 'apps\JobappliedController@deletejobappliedajax')->name('jobapplied/deletejobappliedajax');
+Route::get('/jobapplieddelete', 'apps\JobappliedController@jobapplieddelete')->name('jobapplieddelete');
 
 // admin session
 // addjobposition

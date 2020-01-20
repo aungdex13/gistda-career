@@ -15,25 +15,26 @@
 		use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 		public function insertjobavailable(Request $req)
 	 	{
-      $user_id = (isset($_POST['user_id '])) ? $_POST['user_id'] : '0';
+      $user_id = $_GET['user_id'];
 			// dd($user_id);
-      $position_id = (isset($_POST['position_id'])) ? $_POST['position_id'] : '0';
-      $status = (isset($_POST['status'])) ? $_POST['status'] : '0';
+      $position_id = $_GET['position_id'];
+      $status = $_GET['status'];
       $date_entry = date('Y-m-d');
 			$date_update = date('Y-m-d');
 		$data = array(
       'user_id' => $user_id,
       'position_id' => $position_id,
-    'status' => $status,
-    'date_entry' => $date_entry,
-    'date_update' => $date_update
-		);
+    	'status' => $status,
+    	'date_entry' => $date_entry,
+    	'date_update' => $date_update
 
+		);
+			// dd($data);
 	$res1	= DB::table('tbl_select_job')->insert($data);
 	 // dd($res1);
 	if ($res1){
 		$msg = " ส่งข้อมูลสำเร็จ";
-		$url_rediect = "<script>alert('".$msg."'); window.location='#job-available-section';</script> ";
+		$url_rediect = "<script>alert('".$msg."'); window.location='/#job-available-section';</script> ";
 	}else{
 		$msg = " ส่งข้อมูลไม่สำเร็จ";
 		$url_rediect = "<script>alert('".$msg."');</script> ";
@@ -46,7 +47,7 @@ public function jobavailableindex(Request $req){
 	$jobavailabledata = DB::select('select * FROM tbl_position WHERE status = "1"' );
 	$listfile= DB::table('tbl_position')
 									->select('*')
-									->whereIn('status',[1,2] )
+									->whereIn('status',[1] )
 									->get();
 	return view('apps.index',compact(
 		'jobavailabledata',
@@ -134,7 +135,7 @@ public function jobavailableajax(Request $req){
 										.$row->job_post_date.
 								'</p>
 								<div class="modal-footer">
-								<a class="btn btn-danger" href="insertjobavailable?filename='.$row->id.'&status='.$row->status.'">ยืนยัน</a>
+								<a class="btn btn-danger" href="insertjobavailable?user_id='.$row->id.'&position_id='.$row->id.'&status='.$row->status.'">ยืนยัน</a>
 								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 								</div>';
 		}
