@@ -31,7 +31,7 @@ Route::get('/jobapplieddelete', 'frontend\JobappliedController@jobapplieddelete'
 
 // backend session
 // addjobposition
-Route::get('/addjobposition', 'backend\AddjobpositionController@addjobpositionindex')->name('addjobposition');
+Route::get('/addjobposition/user_id/123456', 'backend\AddjobpositionController@addjobpositionindex')->name('addjobposition/user_id/123456');
 Route::post('/insertposition', 'backend\AddjobpositionController@insertposition')->name('insertposition');
 Route::get('/jobposition', 'backend\AddjobpositionController@jobpositionindex')->name('jobposition');
 Route::post('/jobposition/jobpositionajax', 'backend\AddjobpositionController@jobpositionajax')->name('jobposition/jobpositionajax');
