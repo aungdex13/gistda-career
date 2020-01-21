@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Http\Controllers\apps;
+	namespace App\Http\Controllers\frontend;
 
 	use Illuminate\Foundation\Bus\DispatchesJobs;
 	use Illuminate\Routing\Controller as BaseController;
@@ -49,7 +49,7 @@ public function jobavailableindex(Request $req){
 									->select('*')
 									->whereIn('status',[1] )
 									->get();
-	return view('apps.index',compact(
+	return view('frontend.index',compact(
 		'jobavailabledata',
 		'listfile',
 	 'list'
@@ -60,7 +60,7 @@ public function prov(){
 	$list=DB::table('tbl_provinces')
 	->orderBy('province_name', 'ASC')
 	->get();
-	 // return view('AEFI.Apps.form1')->with('list',$list);
+	 // return view('AEFI.frontend.form1')->with('list',$list);
 	 return $list;
 }
 public function fetch(Request $request){

@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Http\Controllers\apps;
+	namespace App\Http\Controllers\frontend;
 
 	use Illuminate\Foundation\Bus\DispatchesJobs;
 	use Illuminate\Routing\Controller as BaseController;
@@ -66,7 +66,7 @@ public function attachmentindex(Request $req){
 									->where('user_id', '1' )
 									->where('status', '1')
 									->get();
-	return view('apps.attachment',compact(
+	return view('frontend.attachment',compact(
 	 'listfile'
  ));
 }

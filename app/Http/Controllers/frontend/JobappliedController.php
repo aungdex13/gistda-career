@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Http\Controllers\apps;
+	namespace App\Http\Controllers\frontend;
 
 	use Illuminate\Foundation\Bus\DispatchesJobs;
 	use Illuminate\Routing\Controller as BaseController;
@@ -16,13 +16,21 @@
 
 
 public function jobapplied(Request $req){
-	$listjobapplied= DB::table('tbl_select_job')
+	$listjobapplied = DB::table('tbl_select_job')
             ->join('tbl_position', 'tbl_select_job.position_id', '=', 'tbl_position.id')
-            ->select('tbl_select_job.*', 'tbl_position.job_descriptions', 'tbl_position.saraly', 'tbl_position.position_name', 'tbl_position.saraly')
-						->where('tbl_select_job.status', '1')
+            ->select('tbl_select_job.id',
+						'tbl_select_job.position_id',
+						'tbl_select_job.user_id',
+						'tbl_select_job.status',
+						'tbl_position.position_name',
+						'tbl_position.job_descriptions',
+						'tbl_position.saraly',
+						'tbl_position.position_name'
+							 )
+						 ->where('tbl_select_job.status', '1')
             ->get();
-	return view('apps.jobapplied',compact(
-		'listjobapplied',
+	return view('frontend.jobapplied',compact(
+		'listjobapplied'
  ));
 }
 public function jobapplieddelete(Request $req){

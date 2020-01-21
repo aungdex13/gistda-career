@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Http\Controllers\apps;
+	namespace App\Http\Controllers\frontend;
 
 	use Illuminate\Foundation\Bus\DispatchesJobs;
 	use Illuminate\Routing\Controller as BaseController;
@@ -162,7 +162,7 @@
 
 public function resumeindex(Request $req){
 	$list=$this->prov();
-	return view('apps.resume',compact(
+	return view('frontend.resume',compact(
 	 'list'
  ));
 }
@@ -171,7 +171,7 @@ public function prov(){
 	$list=DB::table('tbl_provinces')
 	->orderBy('province_name', 'ASC')
 	->get();
-	 // return view('AEFI.Apps.form1')->with('list',$list);
+	 // return view('AEFI.frontend.form1')->with('list',$list);
 	 return $list;
 }
 public function fetch(Request $request){

@@ -11,30 +11,30 @@
 |
 */
 
-Route::get('/', 'apps\JobavailableController@jobavailableindex')->name('/');
-Route::post('/jobavailableajax', 'apps\JobavailableController@jobavailableajax')->name('/jobavailableajax');
-Route::get('insertjobavailable', 'apps\JobavailableController@insertjobavailable')->name('insertjobavailable');
+Route::get('/', 'frontend\JobavailableController@jobavailableindex')->name('/');
+Route::post('/jobavailableajax', 'frontend\JobavailableController@jobavailableajax')->name('/jobavailableajax');
+Route::get('insertjobavailable', 'frontend\JobavailableController@insertjobavailable')->name('insertjobavailable');
 // function insert tbl_resume
-Route::get('/resume', 'apps\ResumeController@resumeindex')->name('resume');
-Route::post('/insertdataresume', 'apps\ResumeController@insertresume')->name('insertdataresume');
-Route::post('/resume/fetch', 'apps\ResumeController@fetch')->name('dropdown.fetch');
-Route::post('/resume/fetchD', 'apps\ResumeController@fetchD')->name('dropdown.fetchD');
+Route::get('/resume', 'frontend\ResumeController@resumeindex')->name('resume');
+Route::post('/insertdataresume', 'frontend\ResumeController@insertresume')->name('insertdataresume');
+Route::post('/resume/fetch', 'frontend\ResumeController@fetch')->name('dropdown.fetch');
+Route::post('/resume/fetchD', 'frontend\ResumeController@fetchD')->name('dropdown.fetchD');
 // attachment
-Route::get('/attachment', 'apps\AttachmentController@attachmentindex')->name('attachment');
-Route::post('/attachment/attachmentajax', 'apps\AttachmentController@attachmentajax')->name('/attachment/attachmentajax');
-Route::post('/uploadfile', 'apps\AttachmentController@uploadFilePost')->name('uploadfile');
-Route::get('/deletefile', 'apps\AttachmentController@deletefile')->name('deletefile');
+Route::get('/attachment', 'frontend\AttachmentController@attachmentindex')->name('attachment');
+Route::post('/attachment/attachmentajax', 'frontend\AttachmentController@attachmentajax')->name('/attachment/attachmentajax');
+Route::post('/uploadfile', 'frontend\AttachmentController@uploadFilePost')->name('uploadfile');
+Route::get('/deletefile', 'frontend\AttachmentController@deletefile')->name('deletefile');
 // Jobapplied
-Route::get('/jobapplied', 'apps\JobappliedController@jobapplied')->name('jobapplied');
-Route::post('jobapplied/deletejobappliedajax', 'apps\JobappliedController@deletejobappliedajax')->name('jobapplied/deletejobappliedajax');
-Route::get('/jobapplieddelete', 'apps\JobappliedController@jobapplieddelete')->name('jobapplieddelete');
+Route::get('/jobapplied', 'frontend\JobappliedController@jobapplied')->name('jobapplied');
+Route::post('jobapplied/deletejobappliedajax', 'frontend\JobappliedController@deletejobappliedajax')->name('jobapplied/deletejobappliedajax');
+Route::get('/jobapplieddelete', 'frontend\JobappliedController@jobapplieddelete')->name('jobapplieddelete');
 
-// admin session
+// backend session
 // addjobposition
-Route::get('/addjobposition', 'admin\AddjobpositionController@addjobpositionindex')->name('addjobposition');
-Route::post('/insertposition', 'admin\AddjobpositionController@insertposition')->name('insertposition');
-Route::get('/jobposition', 'admin\AddjobpositionController@jobpositionindex')->name('jobposition');
-Route::post('/jobposition/jobpositionajax', 'admin\AddjobpositionController@jobpositionajax')->name('jobposition/jobpositionajax');
-Route::post('/jobposition/deletejobpositionajax', 'admin\AddjobpositionController@deletejobpositionajax')->name('jobposition/deletejobpositionajax');
-Route::get('/deleteposition', 'admin\AddjobpositionController@deleteposition')->name('deleteposition');
-Route::get('/changesposition', 'admin\AddjobpositionController@changesposition')->name('changesposition');
+Route::get('/addjobposition', 'backend\AddjobpositionController@addjobpositionindex')->name('addjobposition');
+Route::post('/insertposition', 'backend\AddjobpositionController@insertposition')->name('insertposition');
+Route::get('/jobposition', 'backend\AddjobpositionController@jobpositionindex')->name('jobposition');
+Route::post('/jobposition/jobpositionajax', 'backend\AddjobpositionController@jobpositionajax')->name('jobposition/jobpositionajax');
+Route::post('/jobposition/deletejobpositionajax', 'backend\AddjobpositionController@deletejobpositionajax')->name('jobposition/deletejobpositionajax');
+Route::get('/deleteposition', 'backend\AddjobpositionController@deleteposition')->name('deleteposition');
+Route::get('/changesposition', 'backend\AddjobpositionController@changesposition')->name('changesposition');

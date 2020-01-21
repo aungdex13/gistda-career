@@ -1,6 +1,6 @@
 <?php
 
-	namespace App\Http\Controllers\admin;
+	namespace App\Http\Controllers\backend;
 
 	use Illuminate\Foundation\Bus\DispatchesJobs;
 	use Illuminate\Routing\Controller as BaseController;
@@ -64,7 +64,7 @@
 
 public function addjobpositionindex(Request $req){
 	$list=$this->prov();
-	return view('admin.addjobposition',compact(
+	return view('backend.addjobposition',compact(
 	 'list'
  ));
 }
@@ -74,7 +74,7 @@ public function jobpositionindex(Request $req){
 									->select('*')
 									->whereIn('status',[1,2] )
 									->get();
-	return view('admin.jobposition',compact(
+	return view('backend.jobposition',compact(
 		'listfile',
 	 'list'
  ));
