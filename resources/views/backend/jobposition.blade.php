@@ -15,7 +15,10 @@
               <br>
               <div class="row form-group">
               <div class="form-group col-md-6">
-                  <a class="btn btn-info" href="{{ 'addjobposition/user_id/123456' }}">เพิ่มข้อมูลตำแหน่งที่เปิดรับสมัคร</a>
+								<?php
+										$user_id="222";
+								 ?>
+                  <a class="btn btn-info" href="{{ 'addjobposition' }}/<?php echo $user_id; ?>">เพิ่มข้อมูลตำแหน่งที่เปิดรับสมัคร</a>
               </div>
             </div>
         </div>

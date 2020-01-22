@@ -13,6 +13,7 @@
 						{{ csrf_field() }}
 						<!-- One "tab" for each step in the form: -->
 						<div class="tab">
+				<input type="text" name="user_id" value="{{$user_id}}"  class="form-control" required>
 							<div class="row form-group">
 								<div class="col-md-6">
 									<label for="">ตำแหน่ง *</label>

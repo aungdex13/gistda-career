@@ -27,7 +27,8 @@
       $saraly = (isset($_POST['saraly'])) ? $_POST['saraly'] : '0';
       $request = (isset($_POST['request'])) ? $_POST['request'] : '0';
       $job_post_date = (isset($_POST['job_post_date'])) ? $_POST['job_post_date'] : '0';
-			$user_id = 123456;
+			$user_id = $_GET['user_id'];
+			dd($user_id);
 			$status = 2 ;
       $date_entry = date('Y-m-d');
 		$data = array(
@@ -62,10 +63,15 @@
 
 }
 
-public function addjobpositionindex(Request $req){
+public function addjobpositionindex($user_id){
+	// return '<h1>test : '.$user_id.'</h1>';
+	$user_id=$user_id;
+	 // dd($user_id);
 	$list=$this->prov();
 	return view('backend.addjobposition',compact(
-	 'list'
+	 'list',
+	 'user_id'
+
  ));
 }
 public function jobpositionindex(Request $req){
