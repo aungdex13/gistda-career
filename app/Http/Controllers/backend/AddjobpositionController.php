@@ -63,10 +63,10 @@
 
 }
 
-public function addjobpositionindex($user_id){
+public function addjobpositionindex(Request $req){
 	// return '<h1>test : '.$user_id.'</h1>';
-	$user_id=$user_id;
-	 // dd($user_id);
+	$user_id=$req->user_id;
+	  // dd($user_id);
 	$list=$this->prov();
 	return view('backend.addjobposition',compact(
 	 'list',
@@ -87,20 +87,21 @@ public function jobpositionindex(Request $req){
 }
 public function deleteposition(Request $req){
 	$deleteposition= DB::table('tbl_position')
-            ->where('id', $_GET['id'])
+            ->where('id', $req->id)
             ->update(['status' => 3]);
 	if ($deleteposition){
 									$msg = " ลบข้อมูลสำเร็จ";
-									$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+									$url_rediect = "<script>alert('".$msg."'); window.location='/jobposition';</script> ";
 								}else{
 									$msg = " ลบข้อมูลไม่สำเร็จ";
-									$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+									$url_rediect = "<script>alert('".$msg."');window.location='/jobposition';</script> ";
 									}
 									echo $url_rediect;
 							}
 
 public function changesposition(Request $req){
-	$status = $_GET['status'];
+	$status = $req->status;
+	$id = $req->id;
 	$date_update = date('Y-m-d');
 	// dd($date_update);
 	$updateDetails_1 = [
@@ -114,29 +115,29 @@ $updateDetails_2 = [
 	 // dd($status);
 	if($status == "1") {
 		$changesposition= DB::table('tbl_position')
-							->where('id', $_GET['id'])
+							->where('id', $req->id)
 							->where('status', 1)
 							->update($updateDetails_1);
 							if ($changesposition){
 															$msg = " เปลี่ยนสถานะข้อมูลสำเร็จ";
-															$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+															$url_rediect = "<script>alert('".$msg."'); window.location='/jobposition';</script> ";
 														}else{
 															$msg = " เปลี่ยนสถานะข้อมูลไม่สำเร็จ";
-															$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+															$url_rediect = "<script>alert('".$msg."');window.location='/jobposition';</script> ";
 															}
 															echo $url_rediect;
 													}
 elseif ($status == "2") {
 			$changesposition= DB::table('tbl_position')
-								->where('id', $_GET['id'])
+								->where('id', $req->id)
 								->where('status', 2)
 								->update($updateDetails_2);
 								if ($changesposition){
 																$msg = " เปลี่ยนสถานะข้อมูลสำเร็จ";
-																$url_rediect = "<script>alert('".$msg."'); window.location='jobposition';</script> ";
+																$url_rediect = "<script>alert('".$msg."'); window.location='/jobposition';</script> ";
 															}else{
 																$msg = " เปลี่ยนสถานะข้อมูลไม่สำเร็จ";
-																$url_rediect = "<script>alert('".$msg."');window.location='jobposition';</script> ";
+																$url_rediect = "<script>alert('".$msg."');window.location='/jobposition';</script> ";
 																}
 																echo $url_rediect;
 														}
@@ -191,7 +192,7 @@ public function jobpositionajax(Request $req){
 									->where('id', $id )
 									->get();
 		foreach ($query as $row) {
-				$link='<a class="btn btn-danger" href="changesposition?id='.$row->id.'&status='.$row->status.'">ยืนยัน</option>';
+				$link='<a class="btn btn-danger" href="changesposition/id/'.$row->id.'/status/'.$row->status.'">ยืนยัน</option>';
 		}
 	 echo $link;
 							}
@@ -204,7 +205,7 @@ public function jobpositionajax(Request $req){
 																->where('id', $id )
 																->get();
 									foreach ($query as $row) {
-											$link='<a class="btn btn-danger" href="deleteposition?id='.$row->id.'">ยืนยัน</option>';
+											$link='<a class="btn btn-danger" href="deleteposition/id/'.$row->id.'">ยืนยัน</option>';
 									}
 								 echo $link;
 														}

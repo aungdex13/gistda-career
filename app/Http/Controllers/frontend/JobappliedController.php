@@ -35,14 +35,14 @@ public function jobapplied(Request $req){
 }
 public function jobapplieddelete(Request $req){
 	$jobapplieddelete= DB::table('tbl_select_job')
-            ->where('id', $_GET['id'])
+            ->where('id', $req->id)
             ->update(['status' => 2]);
 	if ($jobapplieddelete){
 									$msg = " ลบข้อมูลสำเร็จ";
-									$url_rediect = "<script>alert('".$msg."'); window.location='jobapplied';</script> ";
+									$url_rediect = "<script>alert('".$msg."'); window.location='/jobapplied';</script> ";
 								}else{
 									$msg = " ลบข้อมูลไม่สำเร็จ";
-									$url_rediect = "<script>alert('".$msg."');window.location='jobapplied';</script> ";
+									$url_rediect = "<script>alert('".$msg."');window.location='/jobapplied';</script> ";
 									}
 									echo $url_rediect;
 							}
@@ -58,7 +58,7 @@ public function deletejobappliedajax(Request $req){
 										 // echo $query;
 										 // exit;
 		foreach ($query as $row) {
-				$link='<a class="btn btn-danger" href="jobapplieddelete?id='.$row->id.'">ยืนยัน</option>';
+				$link='<a class="btn btn-danger" href="jobapplieddelete/id/'.$row->id.'">ยืนยัน</option>';
 		}
 	 echo $link;
 							}

@@ -15,10 +15,10 @@
 		use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 		public function insertjobavailable(Request $req)
 	 	{
-      $user_id = $_GET['user_id'];
+      $user_id = $req->user_id;
 			// dd($user_id);
-      $position_id = $_GET['position_id'];
-      $status = $_GET['status'];
+      $position_id = $req->position_id;
+      $status = $req->status;
       $date_entry = date('Y-m-d');
 			$date_update = date('Y-m-d');
 		$data = array(
@@ -135,7 +135,7 @@ public function jobavailableajax(Request $req){
 										.$row->job_post_date.
 								'</p>
 								<div class="modal-footer">
-								<a class="btn btn-danger" href="insertjobavailable?user_id='.$row->id.'&position_id='.$row->id.'&status='.$row->status.'">ยืนยัน</a>
+								<a class="btn btn-danger" href="insertjobavailable/user_id/'.$row->id.'/position_id/'.$row->id.'/status/'.$row->status.'">ยืนยัน</a>
 								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 								</div>';
 		}

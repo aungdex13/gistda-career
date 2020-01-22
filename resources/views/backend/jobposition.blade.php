@@ -18,7 +18,7 @@
 								<?php
 										$user_id="222";
 								 ?>
-                  <a class="btn btn-info" href="{{ 'addjobposition' }}/<?php echo $user_id; ?>">เพิ่มข้อมูลตำแหน่งที่เปิดรับสมัคร</a>
+                  <a class="btn btn-info" href="{{ route('addjobposition',["user_id" => $user_id]) }}">เพิ่มข้อมูลตำแหน่งที่เปิดรับสมัคร</a>
               </div>
             </div>
         </div>

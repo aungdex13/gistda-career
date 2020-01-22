@@ -46,6 +46,7 @@
     </table>
 							</div>
 						</div>
+						<hr>
 							<form action="/uploadfile" method="post" enctype="multipart/form-data">
 									@csrf
 					<div class="pt-5">
@@ -62,7 +63,7 @@
                   <small id="fileHelp" class="form-text text-muted">Please upload a valid PDF or image file. Size of image should not be more than 2MB.</small>
               </div>
 						</div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-success">Submit</button>
 				</div>
 			</div>
 			@include('layout.usersidebar')

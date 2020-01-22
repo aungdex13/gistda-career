@@ -65,15 +65,15 @@
 							<div class="row form-group">
 								<div class="col-md-4">
 									<label for="">อายุ </label>
-									<input type="text" name="age" id="intTextBox"  class="form-control">
+									<input type="text" name="age" id="intTextBox1"  class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">เงินเดือน : </label>
-									<input type="text" name="saraly" id="intTextBox" class="form-control">
+									<input type="text" name="saraly" id="intTextBox2" class="form-control">
 								</div>
 								<div class="col-md-4">
 									<label for="">จำนวนที่ต้องการ *</label>
-									<input type="text" name="request" id="intTextBox" class="form-control" required>
+									<input type="text" name="request" id="intTextBox3" class="form-control" required>
 								</div>
 							</div>
 							<div class="row form-group">
@@ -242,12 +242,17 @@
   };
 }(jQuery));
 
-$("#intTextBox").inputFilter(function(value) {
+$("#intTextBox1").inputFilter(function(value) {
   return /^-?\d*$/.test(value); });
 
  // end input filter
  // datepicker
-
+ $("#intTextBox2").inputFilter(function(value) {
+   return /^-?\d*$/.test(value); });
+	 $("#intTextBox3").inputFilter(function(value) {
+	   return /^-?\d*$/.test(value); });
+		 $("#intTextBox4").inputFilter(function(value) {
+		   return /^-?\d*$/.test(value); });
 </script>
 <script>
 var date = $('#datepicker').datepicker({ dateFormat: 'yy-mm-dd' }).val();

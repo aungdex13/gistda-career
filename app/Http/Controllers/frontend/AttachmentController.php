@@ -71,7 +71,8 @@ public function attachmentindex(Request $req){
  ));
 }
 public function deletefile(Request $req){
-	$status = $_GET['status'];
+	$filename = $req->filename;
+	$status = $req->status;
 	$date_update = date('Y-m-d');
 	// dd($date_update);
 	$updateDetails_1 = [
@@ -79,14 +80,14 @@ public function deletefile(Request $req){
 		'date_update' => $date_update
 ];
 	$deletefile= DB::table('tbl_file_upload')
-            ->where('filename', $_GET['filename'])
+            ->where('filename', $req->filename)
             ->update($updateDetails_1);
 	if ($deletefile){
 									$msg = " ลบข้อมูลสำเร็จ";
-									$url_rediect = "<script>alert('".$msg."'); window.location='attachment';</script> ";
+									$url_rediect = "<script>alert('".$msg."'); window.location='/attachment';</script> ";
 								}else{
 									$msg = " ลบข้อมูลไม่สำเร็จ";
-									$url_rediect = "<script>alert('".$msg."');window.location='attachment';</script> ";
+									$url_rediect = "<script>alert('".$msg."');window.location='/attachment';</script> ";
 									}
 									echo $url_rediect;
 							}
@@ -100,7 +101,7 @@ public function deletefile(Request $req){
 																->where('filename', $filename )
 																->get();
 									foreach ($query as $row) {
-											$link='<a class="btn btn-danger" href="deletefile?filename='.$row->filename.'&status='.$row->status.'">ยืนยัน</a>';
+											$link='<a class="btn btn-danger" href="deletefile/filename/'.$row->filename.'/status/'.$row->status.'">ยืนยัน</a>';
 									}
 								 echo $link;
 														}
