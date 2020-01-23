@@ -12,7 +12,21 @@
 	use Illuminate\Support\Str;
 	class JobavailableController extends Controller
 	{
-		use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+	    /**
+	     * Create a new controller instance.
+	     *
+	     * @return void
+	     */
+	    public function __construct()
+	    {
+	        $this->middleware('auth');
+	    }
+
+	    /**
+	     * Show the application dashboard.
+	     *
+	     * @return \Illuminate\Contracts\Support\Renderable
+	     */
 		public function insertjobavailable(Request $req)
 	 	{
       $user_id = $req->user_id;
@@ -43,6 +57,7 @@
 
 }
 public function jobavailableindex(Request $req){
+	auth()->user()->assignRole('user');
 	$list=$this->prov();
 	$jobavailabledata = DB::select('select * FROM tbl_position WHERE status = "1"' );
 	$listfile= DB::table('tbl_position')

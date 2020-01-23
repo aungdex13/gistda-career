@@ -41,3 +41,7 @@ Route::post('/jobposition/jobpositionajax', 'backend\AddjobpositionController@jo
 Route::post('/jobposition/deletejobpositionajax', 'backend\AddjobpositionController@deletejobpositionajax')->name('jobposition/deletejobpositionajax');
 Route::get('/deleteposition/id/{id}', 'backend\AddjobpositionController@deleteposition')->name('deleteposition');
 Route::get('/changesposition/id/{id}/status/{status}', 'backend\AddjobpositionController@changesposition')->name('changesposition');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

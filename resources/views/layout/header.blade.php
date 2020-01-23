@@ -36,7 +36,31 @@
 			  <li><a href="/#intership-section" class="nav-link">INTERSHIP</a></li>
 			  <li><a href="/#welfare-benefit-section" class="nav-link">WELFARE & BENEFIT</a></li>
 			  <li><a href="/#contact-section" class="nav-link">CONTACT</a></li>
-			  <li><a href="/#" class="nav-link" data-toggle="modal" data-target="#login">LOGIN</a></li>
+      @guest
+			  <li><a href="{{ route('login') }}#" class="nav-link">LOGIN</a></li>
+        <ul class="navbar-nav ml-auto">
+                      </li>
+              @else
+                  <li class="nav-item dropdown">
+                      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                          {{ Auth::user()->email }} <span class="caret"></span>
+                      </a>
+
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ route('logout') }}"
+                             onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                          </a>
+
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                              @csrf
+                          </form>
+                      </div>
+                  </li>
+              @endguest
+          </ul>
+        </li>
 			</ul>
 		  </nav>
 		</div>
